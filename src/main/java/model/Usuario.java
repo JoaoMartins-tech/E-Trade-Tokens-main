@@ -1,5 +1,6 @@
 package model;
 
+// Classe base abstrata com os atributos comuns a todos os usuários do sistema
 public abstract class Usuario {
     protected String id;
     protected String nome;
@@ -9,19 +10,8 @@ public abstract class Usuario {
         this.nome = nome;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
 }

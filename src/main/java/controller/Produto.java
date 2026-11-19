@@ -1,5 +1,6 @@
 package controller;
 
+// Representa um item comercializável em tokens e controla seu estoque
 public class Produto {
     private String id;
     private String nome;
@@ -13,6 +14,7 @@ public class Produto {
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
+    // Reduz o estoque se houver quantidade suficiente disponível
     public boolean debitarEstoque(int qtd) {
         if (this.quantidadeEstoque >= qtd) {
             this.quantidadeEstoque -= qtd;

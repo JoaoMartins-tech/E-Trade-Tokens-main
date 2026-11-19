@@ -2,6 +2,7 @@ package controller;
 
 import model.Usuario;
 
+// Representa o usuário consumidor e gerencia o próprio saldo de tokens
 public class Cliente extends Usuario {
     private String genero;
     private String codigoAmigo;
@@ -18,12 +19,14 @@ public class Cliente extends Usuario {
         this.senha = senha;
     }
 
+    // Adiciona tokens ao saldo apenas se o valor for positivo
     public void depositar(double valor) {
         if (valor > 0) {
             this.tokens += valor;
         }
     }
 
+    // Debita o valor da compra se houver saldo suficiente
     public boolean comprar(double valor) {
         if (this.tokens >= valor) {
             this.tokens -= valor;

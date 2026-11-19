@@ -1,5 +1,6 @@
 package model;
 
+// Implementação padrão das operações financeiras de depósito e compra com tokens
 public class OperacoesImpl implements Operacoes {
     private double saldoTokens;
 
@@ -7,6 +8,7 @@ public class OperacoesImpl implements Operacoes {
         this.saldoTokens = saldoInicial;
     }
 
+    // Soma ao saldo apenas depósitos maiores que zero
     @Override
     public void depositar(double valor) {
         if (valor > 0) {
@@ -14,6 +16,7 @@ public class OperacoesImpl implements Operacoes {
         }
     }
 
+    // Efetua a compra e desconta do saldo caso haja tokens suficientes
     @Override
     public boolean comprar(double valor) {
         if (this.saldoTokens >= valor) {
